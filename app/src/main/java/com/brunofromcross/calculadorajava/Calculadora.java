@@ -1,19 +1,10 @@
 package com.brunofromcross.calculadorajava;
 
 public class Calculadora {
-    private Float resultado;
     private String conta;
     private Float num1;
     private Float num2;
-    private String sinal;
-
-    public Float getResultado() {
-        return resultado;
-    }
-
-    public void setResultado(Float resultado) {
-        this.resultado = resultado;
-    }
+    private String sinal = "";
 
     public String getConta() {
         return conta;
@@ -46,4 +37,25 @@ public class Calculadora {
     public void setSinal(String sinal) {
         this.sinal = sinal;
     }
+
+    public String mult(){
+        return ""+(num1*num2);
+    }
+
+    public String somar(){
+        return ""+(num1+num2);
+    }
+
+    public String div(){
+        return ""+(num1/num2);
+    }
+
+    public String sub(){
+        return ""+(num1-num2);
+    }
+
+    public String resto(){
+        return ""+(num1%num2);
+    }
+
 }
