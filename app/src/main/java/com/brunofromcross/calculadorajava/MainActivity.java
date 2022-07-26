@@ -67,34 +67,36 @@ public class MainActivity extends AppCompatActivity {
 
     public void igual(View view){
         texto = findViewById(R.id.linhaDeNum);
+        texto.setText("");
+        textoAux = "";
         if(calculadora.getSinal().equals("%")){
             calculadora.resto();
             texto.setText(calculadora.resto());
-            limparCalculadora();
+            limparVariaveis();
         }
         if(calculadora.getSinal().equals("-")){
             calculadora.sub();
             texto.setText(calculadora.sub());
-            limparCalculadora();
+            limparVariaveis();
         }
         if(calculadora.getSinal().equals("+")){
             calculadora.somar();
             texto.setText(calculadora.somar());
-            limparCalculadora();
+            limparVariaveis();
         }
         if(calculadora.getSinal().equals("*")){
             calculadora.mult();
             texto.setText(calculadora.mult());
-            limparCalculadora();
+            limparVariaveis();
         }
         if(calculadora.getSinal().equals("/")){
             calculadora.div();
             texto.setText(calculadora.div());
-            limparCalculadora();
+            limparVariaveis();
         }
     }
 
-    private void limparCalculadora() {
+    private void limparVariaveis() {
         Calculadora calculadora = new Calculadora();
         TextView texto;
         String textoAux = "";
