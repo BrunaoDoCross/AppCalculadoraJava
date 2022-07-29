@@ -62,7 +62,8 @@
         app:layout_constraintBottom_toTopOf="@+id/sinalMultiplicar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/num9"
-        app:layout_constraintTop_toBottomOf="@+id/limparCalc" />
+        app:layout_constraintTop_toBottomOf="@+id/limparCalc"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/limparCalc"

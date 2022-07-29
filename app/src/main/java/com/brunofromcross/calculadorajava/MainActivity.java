@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         b = (Button) view;
 
         if (!(isNumeric(b.getText().toString()))) {
-            calculadora.setNum1(Float.parseFloat(texto.getText().toString()));
+            calculadora.setNum1(Float.parseFloat(texto.getText().toString().replace(',','.')));
             if (b.getText().toString().equals("+")) {
                 calculadora.setSinal("+");
                 texto.setText(texto.getText()+"+");
@@ -71,27 +73,27 @@ public class MainActivity extends AppCompatActivity {
         textoAux = "";
         if(calculadora.getSinal().equals("%")){
             calculadora.resto();
-            texto.setText(calculadora.resto());
+            texto.setText(calculadora.resto().replace('.', ','));
             limparVariaveis();
         }
         if(calculadora.getSinal().equals("-")){
             calculadora.sub();
-            texto.setText(calculadora.sub());
+            texto.setText(calculadora.sub().replace('.', ','));
             limparVariaveis();
         }
         if(calculadora.getSinal().equals("+")){
             calculadora.somar();
-            texto.setText(calculadora.somar());
+            texto.setText(calculadora.somar().replace('.', ','));
             limparVariaveis();
         }
         if(calculadora.getSinal().equals("*")){
             calculadora.mult();
-            texto.setText(calculadora.mult());
+            texto.setText(calculadora.mult().replace('.', ','));
             limparVariaveis();
         }
         if(calculadora.getSinal().equals("/")){
             calculadora.div();
-            texto.setText(calculadora.div());
+            texto.setText(calculadora.div().replace('.', ','));
             limparVariaveis();
         }
     }
